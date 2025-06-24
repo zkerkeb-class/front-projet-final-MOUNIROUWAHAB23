@@ -1,0 +1,113 @@
+:root {
+  --primary-color: #00bcd4;
+  --text-color: #121212;
+  --btn-bg: #e0f7fa;
+  --popup-bg: #fff;
+  --popup-title: #333;
+  --popup-text: #444;
+  --popup-btn-bg: #eee;
+  --popup-btn-bg-hover: #ddd;
+  --popup-btn-primary-bg: #00bcd4;
+  --popup-btn-primary-bg-hover: #0097a7;
+  --popup-btn-primary-color: #fff;
+}
+
+body.dark {
+  --primary-color: #00bcd4;
+  --text-color: #ffffff;
+  --btn-bg: #004d60;
+  --popup-bg: #222e34;
+  --popup-title: #fff;
+  --popup-text: #e0f7fa;
+  --popup-btn-bg: #2b3a42;
+  --popup-btn-bg-hover: #36474f;
+  --popup-btn-primary-bg: #00bcd4;
+  --popup-btn-primary-bg-hover: #0097a7;
+  --popup-btn-primary-color: #fff;
+}
+
+.favorite-btn {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background-color: var(--btn-bg);
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.favorite-btn:hover {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+.custom-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(30, 30, 40, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.custom-popup {
+  background: var(--popup-bg);
+  border-radius: 18px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.25);
+  padding: 2.5rem 2rem;
+  max-width: 350px;
+  width: 90%;
+  text-align: center;
+  animation: popupFadeIn 0.3s;
+}
+
+@keyframes popupFadeIn {
+  from { transform: translateY(-30px) scale(0.95); opacity: 0; }
+  to   { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+.custom-popup h2 {
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+  color: var(--popup-title);
+}
+
+.custom-popup p {
+  margin-bottom: 2rem;
+  color: var(--popup-text);
+}
+
+.popup-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.popup-btn {
+  background: var(--popup-btn-bg);
+  border: none;
+  border-radius: 6px;
+  padding: 0.7rem 1.2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  color: var(--text-color);
+  transition: background 0.2s;
+}
+
+.popup-btn:hover {
+  background: var(--popup-btn-bg-hover);
+}
+
+.popup-btn.primary {
+  background: var(--popup-btn-primary-bg);
+  color: var(--popup-btn-primary-color);
+}
+
+.popup-btn.primary:hover {
+  background: var(--popup-btn-primary-bg-hover);
+}

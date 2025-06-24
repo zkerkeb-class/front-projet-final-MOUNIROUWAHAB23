@@ -1,0 +1,114 @@
+:root {
+  --auth-bg: #fff;
+  --auth-text: #121212;
+  --auth-input-bg: #f7f7f7;
+  --auth-input-border: #b2ebf2;
+  --auth-btn-bg: var(--primary-color, #00bcd4);
+  --auth-btn-color: #fff;
+  --auth-error: #e53935;
+}
+
+body.dark {
+  --auth-bg: #1a2327;
+  --auth-text: #e0f7fa;
+  --auth-input-bg: #22313a;
+  --auth-input-border: #00bcd4;
+  --auth-btn-bg: var(--primary-color, #00bcd4);
+  --auth-btn-color: #fff;
+  --auth-error: #ff8a80;
+}
+
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--auth-bg);
+  color: var(--auth-text);
+  transition: background 0.3s, color 0.3s;
+  padding: 2rem 1rem;
+}
+
+.auth-form {
+  background: var(--auth-bg);
+  color: var(--auth-text);
+  padding: 2rem 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  width: 100%;
+  max-width: 400px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: background 0.3s, color 0.3s;
+}
+
+.auth-form h2 {
+  margin-bottom: 1rem;
+  color: var(--auth-text);
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+.auth-form input {
+  background: var(--auth-input-bg);
+  color: var(--auth-text);
+  border: 1px solid var(--auth-input-border);
+  border-radius: 6px;
+  padding: 0.8rem;
+  font-size: 1rem;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border 0.2s, background 0.3s, color 0.3s;
+}
+
+.auth-form input:focus {
+  border-color: var(--primary-color, #00bcd4);
+}
+
+.auth-form button {
+  background: var(--auth-btn-bg);
+  color: var(--auth-btn-color);
+  border: none;
+  border-radius: 6px;
+  padding: 0.9rem;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  width: 100%;
+  transition: background 0.2s, color 0.2s;
+}
+
+.auth-form button:disabled {
+  background: #b2ebf2;
+  color: #888;
+  cursor: not-allowed;
+}
+
+.error {
+  color: var(--auth-error);
+  background: rgba(229,57,53,0.08);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+/* ----------- RESPONSIVE ----------- */
+@media (max-width: 600px) {
+  .auth-form {
+    padding: 1.2rem 0.7rem;
+    border-radius: 10px;
+    max-width: 98vw;
+    font-size: 0.98rem;
+  }
+  .auth-form h2 {
+    font-size: 1.2rem;
+  }
+  .auth-page {
+    padding: 1rem 0.2rem;
+  }
+}

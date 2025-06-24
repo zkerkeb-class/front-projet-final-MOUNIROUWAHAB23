@@ -1,0 +1,130 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  padding: 1rem 2rem;
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.navbar-logo {
+  font-size: 1.4rem;
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+}
+
+.nav-link {
+  color: var(--text-color);
+  text-decoration: none;
+  padding: 0.5rem;
+}
+
+.nav-link.active {
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.settings-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0.4rem 0.6rem;
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.settings-menu {
+  position: absolute;
+  top: 110%;
+  right: 0;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  padding: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  min-width: 200px;
+  z-index: 99;
+}
+
+.settings-item {
+  background: transparent;
+  border: none;
+  text-align: left;
+  padding: 0.5rem 0.8rem;
+  color: var(--text-color);
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.25s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.95rem;
+}
+
+.settings-item:hover {
+  background-color: var(--accordion-bg);
+  color: var(--accent-color);
+}
+
+.language-switch {
+  background: transparent;
+  border: none;
+  color: var(--text-color);
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.language-switch option {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+}
+
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+/* Responsive mobile */
+@media (max-width: 768px) {
+  .navbar-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: var(--bg-color);
+    flex-direction: column;
+    align-items: flex-start;
+    width: 220px;
+    padding: 1rem;
+    display: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  }
+
+  .navbar-links.open {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}

@@ -1,0 +1,255 @@
+:root {
+  --bg-color: #ffffff;
+  --text-color: #121212;
+  --card-bg: #f9f9f9;
+  --border-color: #ccc;
+  --accent-color: #00bcd4;
+  --accordion-bg: #eaeaea;
+}
+
+body.dark {
+  --bg-color: #121212;
+  --text-color: #ffffff;
+  --card-bg: #1e1e1e;
+  --border-color: #444;
+  --accent-color: #00bcd4;
+  --accordion-bg: #2a2a2a;
+}
+
+.show-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 1.5rem 1rem;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  box-sizing: border-box;
+}
+
+.image-section {
+  flex: 1 1 300px;
+  max-width: 340px;
+  min-width: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.detail-image {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+  background: var(--card-bg);
+  object-fit: cover;
+}
+
+.backdrop-image {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.12);
+  object-fit: cover;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.gallery-img {
+  width: 48%;
+  border-radius: 6px;
+  object-fit: cover;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease;
+}
+
+.gallery-img:hover {
+  transform: scale(1.04);
+}
+
+.info-section {
+  flex: 2 1 400px;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.2rem 1.5rem;
+  margin: 0;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px rgba(0,0,0,0.06);
+}
+
+.card h4 {
+  margin-bottom: 0.4rem;
+  color: var(--accent-color);
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.card p {
+  margin: 0.2rem 0 0 0; /* réduit encore l’espace sous titre */
+  line-height: 1.6;
+}
+
+.card ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.card li {
+  padding: 0.45rem 0;
+  border-bottom: 1px solid var(--border-color);
+  line-height: 1.5;
+  font-size: 0.98rem;
+}
+
+.card li:last-child {
+  border-bottom: none;
+}
+
+/* --- Accordéon Episodes scrollable --- */
+.card.accordion-section {
+  max-height: 450px;
+  overflow-y: auto;
+  padding-right: 10px;
+  scrollbar-width: thin;
+}
+
+.card.accordion-section::-webkit-scrollbar {
+  width: 6px;
+}
+
+.card.accordion-section::-webkit-scrollbar-thumb {
+  background-color: var(--accent-color);
+  border-radius: 3px;
+}
+
+.accordion-section {
+  margin-top: 1rem;
+  max-height: 450px;
+  overflow-y: auto;
+  padding-right: 6px;
+  scrollbar-width: thin;
+}
+
+.accordion-section li {
+  margin-bottom: 0.4rem;
+}
+
+.accordion-toggle {
+  background: var(--accordion-bg);
+  border: none;
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  border-radius: 4px;
+  position: relative;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.accordion-toggle::after {
+  content: '▶';
+  position: absolute;
+  right: 1rem;
+  transition: transform 0.3s ease, content 0.3s ease;
+}
+
+.accordion-toggle.open::after {
+  content: '▼';
+}
+
+.accordion-toggle:hover {
+  background: var(--accent-color);
+  color: white;
+}
+
+.episode-list {
+  margin-top: 0.5rem;
+  list-style: none;
+  padding-left: 1rem;
+  color: var(--text-color);
+}
+
+.episode-list li {
+  padding: 0.4rem 0;
+  border-left: 3px solid var(--accent-color);
+  padding-left: 0.6rem;
+  font-size: 0.95rem;
+}
+
+/* --- Informations scrollable --- */
+.card.informations {
+  max-height: 400px;
+  overflow-y: auto;
+  padding-right: 10px;
+  scrollbar-width: thin;
+}
+
+.card.informations::-webkit-scrollbar {
+  width: 6px;
+}
+
+.card.informations::-webkit-scrollbar-thumb {
+  background-color: var(--accent-color);
+  border-radius: 3px;
+}
+
+/* --- Description -- */
+.card.description {
+  padding: 0.8rem 1.5rem 1rem 1.5rem; /* moins haut */
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 900px) {
+  .show-details {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1rem 0.5rem;
+  }
+
+  .image-section,
+  .info-section {
+    max-width: 100%;
+    min-width: 0;
+    flex: 1 1 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .show-details {
+    padding: 0.5rem 0.2rem;
+    gap: 1rem;
+  }
+
+  .card {
+    padding: 0.9rem 0.8rem;
+  }
+
+  .gallery-img {
+    width: 100%;
+  }
+
+  .card.accordion-section {
+    max-height: 300px;
+  }
+
+  .card.informations {
+    max-height: 300px;
+  }
+}
